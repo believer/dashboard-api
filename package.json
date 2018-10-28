@@ -1,0 +1,26 @@
+{
+  "name": "dashboard-api",
+  "version": "0.1.0",
+  "description": "GraphQL API for https://dashboard.willcodefor.beer",
+  "main": "handler.js",
+  "scripts": {
+    "start": "serverless offline --port 4000",
+    "deploy": "serverless deploy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "apollo-server-lambda": "2.1.0",
+    "axios": "0.18.0",
+    "graphql": "14.0.2",
+    "serverless-plugin-typescript": "1.1.5"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "8.10.1",
+    "@types/node": "8.0.57",
+    "serverless": "1.32.0",
+    "serverless-offline": "3.30.0",
+    "typescript": "2.9.2"
+  },
+  "author": "believer <rickard.laurin@gmail.com>",
+  "license": "MIT"
+}

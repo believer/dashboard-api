@@ -1,0 +1,39 @@
+service:
+  name: dashboard-api
+
+custom:
+  allowed-headers:
+    - Content-Type
+    - Authorization
+    - X-GitHub-Token
+    - X-Trello-Key
+    - X-Trello-Token
+    - X-Trello-Username
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: eu-west-1
+
+functions:
+  graphql:
+    handler: handler.graphql
+    events:
+      - http:
+          method: GET
+          path: graphql
+          cors:
+            origin: '*'
+            headers: ${self:custom.allowed-headers}
+            allowCredentials: true
+      - http:
+          method: POST
+          path: graphql
+          cors:
+            origin: '*'
+            headers: ${self:custom.allowed-headers}
+            allowCredentials: true

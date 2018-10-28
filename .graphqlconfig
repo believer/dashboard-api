@@ -1,0 +1,13 @@
+{
+  "projects": {
+    "dashboard": {
+      "schemaPath": "schema.graphql",
+      "extensions": {
+        "endpoints": {
+          "default": "http://localhost:4000/graphql",
+          "dev": "https://k4d5m48aj8.execute-api.eu-west-1.amazonaws.com/dev/graphql"
+        }
+      }
+    }
+  }
+}
