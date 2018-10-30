@@ -33,8 +33,8 @@ export const typeDefs = gql`
   }
 
   type TrelloAttachment {
-    attachmentType: String!
-    url: String!
+    attachmentType: String
+    url: String
   }
 
   type TrelloData {
