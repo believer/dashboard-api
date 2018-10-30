@@ -36,7 +36,7 @@ export const trelloNotifications = async (_, _args, ctx) => {
             attachmentType: typeOfAttachement(notification.data.attachment.url),
             url: notification.data.attachment.url,
           }
-        : {},
+        : null,
     },
   }))
 }
