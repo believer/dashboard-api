@@ -26,8 +26,6 @@ export const trelloNotifications = async (_, _args, ctx) => {
     }&filter=all&read_filter=unread&fields=all&limit=50&page=0&memberCreator=true&memberCreator_fields=avatarHash%2CfullName%2Cinitials%2Cusername`
   )
 
-  console.log(data[2].data.attachment)
-
   return data.map(notification => ({
     ...notification,
     type_: notification.type,
