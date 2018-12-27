@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { url } from 'inspector'
 
 const typeOfAttachement = text => {
   switch (text.substr(-3)) {

@@ -1,18 +1,30 @@
-import { ApolloServer } from 'apollo-server-lambda'
 import {
-  gitHubNotifications,
-  gitHubMarkAsRead,
   gitHubMarkAllAsRead,
+  gitHubMarkAsRead,
+  gitHubNotifications,
 } from './src/resolvers/github'
-import { typeDefs } from './src/schema'
 import {
-  trelloNotifications,
-  trelloMarkAsRead,
   trelloMarkAllAsRead,
+  trelloMarkAsRead,
+  trelloNotifications,
 } from './src/resolvers/trello'
 
+import { ApolloServer } from 'apollo-server-lambda'
+import { allNotifications } from './src/resolvers/notifications'
+import { typeDefs } from './src/schema'
+
 const resolvers = {
+  Notifications: {
+    __resolveType(obj) {
+      if (obj.repository) {
+        return 'GitHubNotification'
+      }
+
+      return 'TrelloNotification'
+    },
+  },
   Query: {
+    allNotifications,
     gitHubNotifications,
     trelloNotifications,
   },

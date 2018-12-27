@@ -59,7 +59,10 @@ export const typeDefs = gql`
     unread: Boolean!
   }
 
+  union Notifications = GitHubNotification | TrelloNotification
+
   type Query {
+    allNotifications: [Notifications]!
     gitHubNotifications: [GitHubNotification!]!
     trelloNotifications: [TrelloNotification!]!
   }
